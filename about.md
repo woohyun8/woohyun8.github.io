@@ -6,21 +6,25 @@ layout: page
 
 <p>Hello, there! My name is Woohyun Song and I'm an undergraduate student studying Computational and Data Sciences at George Mason University. I'm intersted in Biomedical Science and Psychology. Nice to meet you😊 </p>
 
-<p>what I have to write?</p>
 
-<h2>Skills</h2>
+<h2>💻Languages</h2>
 
-<ul class="skill-list">
+<ul class="languages-list">
 	<li>R (RStudio)</li>
 	<li>MATLAB</li>
 	<li>LaTex</li>
 	<li>Git</li>
 	<li>Python</li>
-	<li>MySQL</li>
+	<li>SQL</li>
+	<li>Fortran</li>
+	<li>Netlogo</li>
 </ul>
 
-<h2>Projects</h2>
+<h2>⚒️Skills</h2>
 
-<ul>
-  TBD
+<ul class="skills-list">
+	<li>Excel</li>
+	<li>Git</li>
 </ul>
+
+
