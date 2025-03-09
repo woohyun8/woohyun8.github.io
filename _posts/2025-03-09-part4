@@ -1,0 +1,27 @@
+---
+title: "🙂 Relationship between Happiness Score and Quality of Life Indicators"
+layout: post
+date: 2025-03-09
+image: /assets/images/markdown.jpg
+headerImage: false
+projects: true
+tag:
+- Data analysis
+- Data Visualization
+author: rachel
+categories: R
+externalLink: false
+---
+
+<div class="side-by-side">
+    <div class="toleft">
+        <img class="image" src="https://woohyun8.github.io/assets/images/happy.jpg" alt="Alt Text">
+        <figcaption class="caption">Photo by John Doe</figcaption>
+    </div>
+
+    <div class="toright">
+        <p>explore which quality of life indicators have a significant relationship with the happiness scores of different regions.<br><br>
+        <strong>Research Question:</strong>"Which quality of life indicators have a significant relationship with the happiness score among different regions?"<br><br>
+        [👀Take a Look!](https://github.com/woohyun8/Happiness_LifeQuality)</p>
+    </div>
+</div>
