@@ -1,7 +1,7 @@
 ---
 title: "Internal Migration–Florida Analysis"
 layout: post
-date: 2025-04-20
+date: 2025-05-15
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
