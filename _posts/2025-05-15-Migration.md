@@ -68,7 +68,15 @@ Using the New York Times COVID report's weekly COVID-19 infection rate data by c
 
 **3. Statistical Analysis**
 
+**- Permutation Test**
 
+This test is used to determine whether the values of C, CR, and CD observed within a region are statistically significant. The boundary labels within and between regions are randomly reassigned 1,000 times to generate a distribution of expected values. This test is then performed for each of the three types of case values and for each region type. The results are compared with the actual observed values to determine significance.
+
+**-Granger-causality & Kolmogorov-Smirnov (KS) Test**
+
+*Grander causality* is a statistical method for verifying causal relationships between time series data based on predictability. This study analyzed whether changes in COVID-19 case rates in one region could visually predict changes in confirmed case rates in adjacent regions using lagged values of the case rates, and then *confirmed whether the inference of COVID-19 case rates in adjacent counties improved or not*. If both tests are statistically significant (p<0.001) for a pair of adjacent counties, it can be concluded that Granger causality exists, indicating the possibility of transmission between the two counties.
+
+The *Kolmogorov–Smirnov (KS)* test measures how similarly different regional classification methods, such as commute, Twitter, and Facebook, move over time. Specifically, it calculates the maximum difference (D-statistic) between two distributions to test for significant differences.
 
 ## 📑 Result/Interpretation
 
