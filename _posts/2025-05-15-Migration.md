@@ -58,7 +58,7 @@ The research question mentioned in the paper is:
 
 **1. Community-Detection Algorithms**
 
-In this study, five algorithms- Fast Greedy, InfoMap, Louvain, REDCAP, and WalkTrap- were used to distinguish communities. As a result, the **Louvain** method yielded the largest values of maximized modularity \( Q_{\text{max}} \).
+In this study, five algorithms- Fast Greedy, InfoMap, Louvain, REDCAP, and WalkTrap- were used to distinguish communities. As a result, the **Louvain** method yielded the largest values of maximized modularity ***Q_max***.
 
 - Here, **Modularity Q** is an indicator that quantifies how well a network is divided into communities. The *higher* the Q value, the more nodes are connected within their own communities. That is, there are fewer connections to other communities, resulting in a clear community structure. Conversely, a *low* Q value indicates that the boundaries between communities are blurred and that the network is entangled overall.
 
@@ -74,9 +74,22 @@ This test is used to determine whether the values of C, CR, and CD observed with
 
 **-Granger-causality & Kolmogorov-Smirnov (KS) Test**
 
-*Grander causality* is a statistical method for verifying causal relationships between time series data based on predictability. This study analyzed whether changes in COVID-19 case rates in one region could visually predict changes in confirmed case rates in adjacent regions using lagged values of the case rates, and then *confirmed whether the inference of COVID-19 case rates in adjacent counties improved or not*. If both tests are statistically significant (p<0.001) for a pair of adjacent counties, it can be concluded that Granger causality exists, indicating the possibility of transmission between the two counties.
+`Grander causality` is a statistical method for verifying causal relationships between time series data based on predictability. This study analyzed whether changes in COVID-19 case rates in one region could visually predict changes in confirmed case rates in adjacent regions using lagged values of the case rates, and then *confirmed whether the inference of COVID-19 case rates in adjacent counties improved or not*. If both tests are statistically significant (p<0.001) for a pair of adjacent counties, it can be concluded that Granger causality exists, indicating the possibility of transmission between the two counties.
 
-The *Kolmogorov–Smirnov (KS)* test measures how similarly different regional classification methods, such as commute, Twitter, and Facebook, move over time. Specifically, it calculates the maximum difference (D-statistic) between two distributions to test for significant differences.
+The `Kolmogorov–Smirnov (KS)` test measures how similarly different regional classification methods, such as commute, Twitter, and Facebook, move over time. Specifically, it calculates the maximum difference (D-statistic) between two distributions to test for significant differences.
 
 ## 📑 Result/Interpretation
 
+The map below visualizes the boundaries of regions in the continental United States derived from each regional classification method. You can see that the number of communities and the shape of boundaries vary significantly depending on the data type.
+
+![boundaries](/assets/images/Boundaries.png)
+
+-> Especially, **Commute Regions** are the most dense and uniform in form, and their boundaries reflect actual commuting flows.
+
+The second table shows the statistical significance and degree of time synchronization for each regional division. Permutation test results showed that the **Commutes and Trips networks** exhibited statistically significant differences between regions and between regions and their surroundings in both case rates and case-rate differences. Granger-causality analysis also revealed that commute regions were well connected internally, with a 46.32% connection in infection rate changes, while external connections were weaker at 30.82%. This indicates that boundaries function clearly. 
+
+Additionally, the KS test results support this, with larger D-statistic values indicating that regional partitions better align with actual transmission patterns. In other words, **Commutes and Twitter** show statistically significant distribution differences.
+
+![statistics](/assets/images/Statistics.png)
+
+-> In conclusion, infection rate patterns were more similar internally in areas defined based on actual movement data, particularly for commutes, and there was a tendency for spread across regional boundaries to be suppressed. This suggests that movement-based communities may be a more effective method of responding to infectious diseases than states.
