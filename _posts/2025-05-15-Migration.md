@@ -17,6 +17,12 @@ author: rachel
 description: Markdown summary with different options
 ---
 
+<script type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 -   [Introduction](#introduction)
 -   [Journal Summary](#journal-summary)
     -   [🧐 Research Question & Research Gap](#research-question--research-gap)
@@ -55,6 +61,13 @@ The research question mentioned in the paper is:
 In this study, five algorithms- Fast Greedy, InfoMap, Louvain, REDCAP, and WalkTrap- were used to distinguish communities. As a result, the **Louvain** method yielded the largest values of maximized modularity \( Q_{\text{max}} \).
 
 - Here, **Modularity Q** is an indicator that quantifies how well a network is divided into communities. The *higher* the Q value, the more nodes are connected within their own communities. That is, there are fewer connections to other communities, resulting in a clear community structure. Conversely, a *low* Q value indicates that the boundaries between communities are blurred and that the network is entangled overall.
+
+**2. COVID-19 Data Connections**
+
+Using the New York Times COVID report's weekly COVID-19 infection rate data by county, this study calculates the sum of `C (case count)`, `CR (case rate per 1,000 people)`, and `CD (case rate difference)` between counties to generate a random distribution.
+
+**3. Statistical Analysis**
+
 
 
 ## 📑 Result/Interpretation
