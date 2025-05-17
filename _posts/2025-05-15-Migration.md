@@ -29,10 +29,12 @@ description: Markdown summary with different options
     -   [🗝️ Method](#method)
     -   [📑 Result/Interpretation](#resultinterpretation)
 -   [Data Introduction](#data-introduction)
-    -   [📁 Data Sources](#data-sources)
-    -   [📊 Major Characteristics of the data](#major-characteristics-of-the-data)
-    -   [💻 Data Pre-processing](#data-pre-processing)
+    -   [🌐 Data Sources](#data-sources)
+    -   [📈 Data Pre-processing](#data-pre-processing)
+    -   [💡 Algorithms](#algorithms)
 -   [Analysis](#analysis)
+    -   [🔎 Examining Communities](#examining-communities)
+    -   [📊 Statistical Analysis](#statistical-analysis)
 -   [Conclusion](#conclusion)
 
 # Introduction
@@ -93,3 +95,21 @@ Additionally, the KS test results support this, with larger D-statistic values i
 ![statistics](/assets/images/Statistics.png)
 
 -> In conclusion, infection rate patterns were more similar internally in areas defined based on actual movement data, particularly for commutes, and there was a tendency for spread across regional boundaries to be suppressed. This suggests that movement-based communities may be a more effective method of responding to infectious diseases than states.
+
+
+# Data Introduction
+
+## 🌐 Data Sources
+
+1) **[U.S. Census Bureau](https://www.census.gov/data/tables/2020/demo/geographic-mobility/county-to-county-migration-2016-2020.html)**.
+
+Specifically: 
+
+* **County-to-County Migration Flows** : `In-, Out-, Net, and Gross Migration`
+
+2) **County shp file:** `COUNTY_2019_US_SL050_2019-11-13_15-15-56-579.zip`
+
+3) **MSA shp file:** `CBSA_(MSA)_2019_US_S_2022-12-14_12-25-07-474.zip`
+
+4) **Socioeconomic Variables Data:** `R13859119_SL050.csv`
+
