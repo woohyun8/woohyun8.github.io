@@ -19,9 +19,9 @@ description: Markdown summary with different options
 
 -   [Introduction](#introduction)
 -   [Journal Summary](#journal-summary)
-    -   [🔍 Research Question & Research Gap](#research-question--research-gap)
-    -   [📝 Method](#method)
-    -   [🤓 Result/Interpretation](#resultinterpretation)
+    -   [🧐 Research Question & Research Gap](#research-question--research-gap)
+    -   [🗝️ Method](#method)
+    -   [📑 Result/Interpretation](#resultinterpretation)
 -   [Data Introduction](#data-introduction)
     -   [📁 Data Sources](#data-sources)
     -   [📊 Major Characteristics of the data](#major-characteristics-of-the-data)
@@ -39,5 +39,23 @@ Above all, I want to thank Professor Park for her insightful feedback and encour
 
 # Journal Summary
 
-**[Andris et al. (2023)](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-023-00426-1)** served as the background knowledge for my project, offering key insights into how trade flows can be modeled and interpreted through network analysis.
+**[Andris et al. (2023)](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-023-00426-1)** was the background knowledge for my project, offering key insights into how internal migration flows can be modeled and interpreted through network analysis and various algorithms.
+
+## 🧐 Research Question & Research Gap
+
+In the early stages of the COVID-19 pandemic, most pandemic control policies in the United States were implemented at the state level. However, the actual movement patterns of people and social connections, i.e., ***functional regions***, do not fully align with state boundaries. The paper addresses this research gap by applying a community-detection algorithm to large networks of mobility and social-media connections to determine the boundaries between functional regions. 
+
+The research question mentioned in the paper is: 
+> *“Which boundaries based on five different human-network regions are able to ‘contain’ COVID-19 cases more effectively than state boundaries in the coterminous United States?”*
+
+## 🗝️ Method
+
+**1. Community-Detection Algorithms**
+
+In this study, five algorithms- Fast Greedy, InfoMap, Louvain, REDCAP, and WalkTrap- were used to distinguish communities. As a result, the **Louvain** method yielded the largest values of maximized modularity \( Q_{\text{max}} \).
+
+- Here, **Modularity Q** is an indicator that quantifies how well a network is divided into communities. The *higher* the Q value, the more nodes are connected within their own communities. That is, there are fewer connections to other communities, resulting in a clear community structure. Conversely, a *low* Q value indicates that the boundaries between communities are blurred and that the network is entangled overall.
+
+
+## 📑 Result/Interpretation
 
