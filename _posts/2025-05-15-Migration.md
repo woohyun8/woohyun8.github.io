@@ -113,3 +113,20 @@ Specifically:
 
 4) **Socioeconomic Variables Data:** `R13859119_SL050.csv`
 
+## 📈 Data Pre-processing
+
+<div class="side-by-side">
+    <div class="toleft">
+        <p>
+            For this project, I decided to analyze the state of Florida.
+        </p>
+    </div>
+
+    <div class="toright">
+        <img class="image" src="https://woohyun8.github.io/assets/images/florida.png" alt="Florida">
+    </div>
+</div>
+
+1. Make Florida Network
+
+
