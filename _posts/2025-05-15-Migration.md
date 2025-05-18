@@ -36,6 +36,7 @@ description: Markdown summary with different options
     -   [✔️ Modularity Check](#modularity-check)
 -   [Analysis](#analysis)
     -   [🔎 Metropolitan Statistical Areas](#metropolitan-statistical-areas)
+    -   [👥 Examine Communities](#examine-communities)
     -   [📊 Statistical Analysis](#statistical-analysis)
 -   [Conclusion](#conclusion)
 
@@ -611,7 +612,29 @@ plt.show()
 
 ![fl_msa](/assets/images/fl_msa.png)
 
-Next, I merged the Louvain algorithm map created above with the MSA boundaries.
+Next, I merged the **Louvain algorithm map** created above with the **MSA boundaries**.
 
 ![louv_msa](/assets/images/louv_msa.png)
 
+- **Community 0**: Includes **southern Florida** -> Features a strongly connected network of large cities and a consistent network structure around them.
+
+- **Community 1**: Includes most of the **northern and Panhandle regions** -> Has a wide geographic range but exhibits similar connection patterns. For example, interconnections between rural or low-density areas can be observed.
+
+- **Community 2**: Includes some **metropolitan areas or suburban regions** such as Miami and Port -> Independent communities with low connectivity to other MSAs and high internal connectivity.
+
+- **Community 3**: Includes parts of **central inland Florida and the eastern coast**, such as Orlando and Palm Bay -> Multiple adjacent metropolitan areas are grouped into a single community, indicating high interaction between counties.
+
+- **Community 4**: Includes parts of the **central and southern regions**, such as Petersburg and Lakeland -> Low connectivity with major metropolitan areas but forms an interconnected independent network.
+
+## 👥 Examine Communities
+
+![louv_box](/assets/images/louv_boxplot.png)
+
+
+
+![race_box](/assets/images/race_boxplot.png)
+
+
+## 📊 Statistical Analysis
+
+## Conclusion
