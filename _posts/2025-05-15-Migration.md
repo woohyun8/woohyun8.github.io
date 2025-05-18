@@ -869,3 +869,17 @@ The **Mann–Whitney U test** and **Kolmogorov–Smirnov (KS) test** indicate th
 
 
 ## Conclusion
+
+The key findings I discovered through this project are
+
+- Community 2 had the **highest income level** and **highest education level** among the analyzed communities. Community 2 is actually located in an area densely populated with large counties in Florida, so this result can be seen as related to the socioeconomic advantages of the region.
+  
+- Community 1 is characterized by **low educational attainment** and **specific racial composition**, showing distinct differences from other communities. This reflects the unique social characteristics of the region. In fact, the areas within Community 1 are among the poorest in Florida, as indicated by the [link](https://hdpulse.nimhd.nih.gov/data-portal/social/map?age=001&age_options=ageall_1&demo=00008&demo_options=poverty_3&race=00&race_options=race_7&sex=0&sex_options=sexboth_1&socialtopic=080&socialtopic_options=social_6&statefips=12&statefips_options=area_states&utm_source=chatgpt.com).
+  
+- Community 3 showed a significant difference in population size compared to other communities, which may be related to the population density or urban structure of the area.
+
+Through this Florida internal migration analysis, I gained insights into the socioeconomic characteristics and population composition of each community, providing valuable information for policy decisions, urban planning, and the provision of social services. Future research will focus on analyzing changes over time, integrating additional variables, and conducting more detailed evaluations of policy impacts. 
+
+Thank you for taking the time to read my lengthy project analysis!
+
+Feel free to leave a comment and share your thoughts!😊
