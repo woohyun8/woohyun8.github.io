@@ -504,7 +504,7 @@ node.head()
 
 Using the above code, I applied the Leiden algorithm to detect communities in the network, extracted the community numbers to which each node belongs, and stored them in a new column `leid` in the node data frame.
 
-### "Informap"
+### "Infomap"
 
 ```python
 im = Infomap(two_level=True, silent=True, flow_model='directed', num_trials=50)
@@ -516,3 +516,20 @@ node['info'] = [info.get(node) for node in node['Geo_COUNTY']] # save as a colum
 
 The above code applies the Infomap algorithm to detect the community structure of a directed network (g) and stores the community number to which each node belongs in a new column named ‘info’ in the node data frame.
 
+## 🗺️ Maps
+
+**-Louvain**
+
+![louvain map](/assets/images/louv_map.png)
+
+**-Lieden**
+
+![leid map](/assets/images/leid_map.png)
+
+**-Girvan-Newman**
+
+![g_n map](/assets/images/g_n_map.png)
+
+**-Infomap**
+
+![info map](/assets/images/info_map.png)
