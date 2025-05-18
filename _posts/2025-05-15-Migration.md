@@ -32,8 +32,10 @@ description: Markdown summary with different options
     -   [🌐 Data Sources](#data-sources)
     -   [📈 Data Pre-processing](#data-pre-processing)
     -   [💡 Algorithms](#algorithms)
+    -   [🗺️ Maps](#maps)
+    -   [✔️ Modularity Check](#modularity-check)
 -   [Analysis](#analysis)
-    -   [🔎 Examining Communities](#examining-communities)
+    -   [🔎 Metropolitan Statistical Areas](#metropolitan-statistical-areas)
     -   [📊 Statistical Analysis](#statistical-analysis)
 -   [Conclusion](#conclusion)
 
@@ -554,6 +556,22 @@ The above code applies the Infomap algorithm to detect the community structure o
 - This indicates that the urban-centric structure and differences in inter-regional connectivity density inherent to the Florida region significantly influenced the analysis results.
 
 
-## Modularity Check
+## ✔️ Modularity Check
 
-dfjn
+![modularity](/assets/images/modularity_df.png)
+
+- The table above compares the modularity values of network community detection algorithms. The **Leiden (0.3020)** and **Louvain (0.3019)** algorithms show the highest modularity and are evaluated as forming relatively well-separated community structures.
+  
+- On the other hand, **Girvan–Newman (0.0015)** and **Infomap (0.0191)** have very low modularity, indicating that the segmentation does not adequately reflect the structural boundaries within the network. In particular, Girvan-Newman resulted in an excessive number of nodes being grouped into a single community.
+
+![modularity_graph](/assets/images/modularity_graph.png)
+
+- The bar graph above visualizes the modularity values of each community detection algorithm. **Louvain** and **Leiden** showed structurally stable community partitions with high modularity, while Girvan–Newman and Infomap showed relatively poor results. Accordingly, I compared and analyzed the characteristics of each community by applying socioeconomic and demographic indicators based on the Louvain algorithm.
+
+# Analysis
+
+## 🔎 Metropolitan Statistical Areas
+
+
+
+
