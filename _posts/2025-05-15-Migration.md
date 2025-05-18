@@ -522,14 +522,33 @@ The above code applies the Infomap algorithm to detect the community structure o
 
 ![louvain map](/assets/images/louv_map.png)
 
-**-Lieden**
+- As a result of applying the Louvain algorithm, Florida was divided into five major communities in a balanced manner, showing a pattern that was relatively consistent with the regional structure. The southern coastal region was separated into an independent community (2), which can be said to be connected to the characteristics of the high-density metropolitan network in that region. The northern region was divided into two communities (0,1), partially reflecting geographical boundaries. This indicates that the Louvain algorithm's high modularity effectively separated these regional characteristics.
+
+**-Leiden**
 
 ![leid map](/assets/images/leid_map.png)
+
+- The Leiden algorithm divided Florida into five communities, with independent communities (3 and 4) forming in the southwest coast and southern inland regions, revealing regional differentiation based on urban density and connection density.
+
+- Meanwhile, many counties are marked as N/A, indicating that the algorithm did not classify areas with connection structures below a certain threshold as communities. Overall, the results appear to effectively reflect the differences in connection density between urban and non-urban areas.
 
 **-Girvan-Newman**
 
 ![g_n map](/assets/images/g_n_map.png)
 
+- The Girvan–Newman algorithm divides networks based on edge betweenness. Looking at the map above, I can see that most counties belong to community 0, with only a few counties scattered across other communities, indicating that the overall structure is not modularized.
+
+- In particular, the northwestern and rural regions, such as Hardee and Glades, are separated into relatively independent small communities. Overall, most counties are grouped into a single community, and structural boundaries are not clearly defined. These results align with the low modularity values observed when applying the Girvan–Newman algorithm.
+
 **-Infomap**
 
 ![info map](/assets/images/info_map.png)
+
+- The Infomap algorithm shows that most counties across Florida belong to a single large community (No. 1), indicating a centralized network structure in which information flows from a few central locations and spreads nationwide. In the northern and some central inland regions, smaller communities are fragmented, likely indicating rural areas with weak connections to metropolitan areas or independent flow patterns. In this algorithm, the separation of parts of the Florida Panhandle (northwest) and the central southern inland regions is a notable feature.
+
+
+![all map](/assets/images/all_map.png)
+
+- Each algorithm defines communities based on different criteria, resulting in varying outcomes. In particular, Louvain and Leiden relatively well reflect the regional structure, while Girvan–Newman exhibited low partition quality and Infomap demonstrated a unified structure centered on information flow.
+
+- This indicates that the urban-centric structure and differences in inter-regional connectivity density inherent to the Florida region significantly influenced the analysis results.
