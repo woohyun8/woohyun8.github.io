@@ -777,10 +777,77 @@ I created violin plots too.
 
 ## 📊 Statistical Analysis
 
-### ANOVA Test & Tukey Test
+### ANOVA Test
 
+I conducted ANOVA tests on all socioeconomic and demographic indicators variables I selected — income, pop (population), Bachelor, Master, Professional, White, Black_African, and Asian. As a result, only the pop, Bachelor, White, and Asian variables exhibited statistically significant differences (p<0.05). In particular, the total population (`pop`) showed the lowest p-value (0.00016), indicating a clear heterogeneity in community composition.
 
+```python
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+
+variables = ['pop', 'Bachelor', 'White', 'Asian']
+
+anova_results = []
+
+for var in variables:
+    model = ols(f'{var} ~ C(louv)', data=node_data).fit()
+    anova_table = anova_lm(model)
+    
+    row = anova_table.loc['C(louv)'].copy()
+    row['Variable'] = var
+    anova_results.append(row)
+
+combined_anova = pd.DataFrame(anova_results)
+
+combined_anova = combined_anova[['Variable', 'df', 'sum_sq', 'mean_sq', 'F', 'PR(>F)']]
+
+display(combined_anova)
+```
+![anova](/assets/images/anova_test.png)
+
+-> These results show clear differences between communities in terms of population size, percentage of residents with bachelor's degrees, percentage of white residents, and percentage of Asian residents.
+
+### Tukey Test
+
+Once again, I conducted a Tukey test on all socioeconomic and demographic indicator variables I selected.
+
+```python
+tukey = MultiComparison(node_data['pop'], node_data['louv'])
+result = tukey.tukeyhsd()
+result.summary()
+```
+![pop_tukey](/assets/images/pop_tukey.png)
+
+-> The analysis results show that there is a statistically significant difference (p < 0.05) between **Community 0 vs 2** and **Community 1 vs 2**. When looking at the population boxplot created above, the difference in population between Community 2 and Communities 0 and 1 is clearly obvious. In particular, Community 2 exhibits a **wide distribution** with some counties exceeding 2.5 million in population and a high median, demonstrating a distinct population density characteristic compared to other communities. This difference was also confirmed to be statistically significant in the TukeyHSD Test conducted, indicating that Community 2 is composed primarily of Florida's metropolitan areas.
+
+```python
+tukey = MultiComparison(node_data['White'], node_data['louv'])
+result = tukey.tukeyhsd()
+result.summary()
+```
+![white_tukey](/assets/images/white_tukey.png)
+
+-> The analysis results show that there is a statistically significant difference (p < 0.05) between **Community 1 vs 2**. Looking at the population boxplot created above, **Community 1** has the highest percentage of white people among all communities, with low dispersion and a median of over 75%. In contrast, Community 2 has the lowest percentage of white people, with high dispersion and a median of about 60%. Community 2 is likely to include many counties with more diverse ethnic compositions and relatively low percentages of white people. Conversely, Community 1 may include areas with a high proportion of white residents. In fact, there is [data](https://www.indexmundi.com/facts/united-states/quick-facts/florida/white-population-percentage?utm_source=chatgpt.com#map) indicating that Citrus County in Florida, colored in Community 1, has the highest percentage of white residents. Community 1 can be interpreted as a group of areas with a relatively *high percentage of white residents, despite its small population*.
 
 ### Mann-Whitney U Test & Kolmogorov-Smirnov Test
+
+```python
+from scipy.stats import mannwhitneyu, ks_2samp
+import itertools
+
+variables = ['income', 'pop', 'Bachelor', 'Master', 'Professional', 'White', 'Black_African', 'Asian']
+groups = sorted(node_data['louv'].dropna().unique())
+
+for var in variables:
+    print(f"\n=== {var.upper()} ===")
+    for g1, g2 in itertools.combinations(groups, 2):
+        data1 = node_data[node_data['louv'] == g1][var].dropna()
+        data2 = node_data[node_data['louv'] == g2][var].dropna()
+
+        u_stat, u_p = mannwhitneyu(data1, data2, alternative='two-sided')
+        ks_stat, ks_p = ks_2samp(data1, data2)
+
+        print(f"{g1} vs {g2} | U p={u_p:.4f} | KS p={ks_p:.4f}")
+```
 
 ## Conclusion
