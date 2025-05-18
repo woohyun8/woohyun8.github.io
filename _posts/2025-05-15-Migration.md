@@ -775,6 +775,12 @@ To further explore the distributions, I visualized the variables using violin pl
 
 -> The figure displays two side-by-side choropleth maps of Florida counties, illustrating the log-scaled distribution of total population and median household income. Furthermore, County-level Louvain community boundaries are overlaid to highlight how these socioeconomic indicators vary across algorithmically detected communities.
 
+### Bubbles representing the centrality
+
+![inflow](/assets/images/inflow_map.png)
+
+-> This map shows clear spatial disparities in county-level migration patterns within Florida. Communities like Community 2 stand out as major migration hubs with large inflow volumes, likely reflecting urbanized regions with high economic opportunity. In contrast, Communities 0 and 5 show consistently low inflow, suggesting more rural or static population zones. The visualization emphasizes how migration intensity aligns with Louvain algorithm community structures, reinforcing the relevance of network-based partitioning in regional demographic analysis.
+
 ## 📊 Statistical Analysis
 
 ### ANOVA Test
