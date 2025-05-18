@@ -552,3 +552,8 @@ The above code applies the Infomap algorithm to detect the community structure o
 - Each algorithm defines communities based on different criteria, resulting in varying outcomes. In particular, Louvain and Leiden relatively well reflect the regional structure, while Girvan–Newman exhibited low partition quality and Infomap demonstrated a unified structure centered on information flow.
 
 - This indicates that the urban-centric structure and differences in inter-regional connectivity density inherent to the Florida region significantly influenced the analysis results.
+
+
+## Modularity Check
+
+dfjn
