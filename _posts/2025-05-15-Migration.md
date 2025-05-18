@@ -115,21 +115,13 @@ Specifically:
 
 ## 📈 Data Pre-processing
 
-<div class="side-by-side">
-    <div class="toleft">
-        <p>
-            For this project, I decided to analyze the state of Florida.
-        </p>
-    </div>
+For this project, I decided to analyze the state of Florida.
 
-    <div class="toright">
-        <img class="image" src="https://woohyun8.github.io/assets/images/florida.png" alt="Florida">
-    </div>
-</div>
+![florida](/assets/images/florida.png)
 
-1. Make Florida Network
+**-Link**
 
--**-Link**
+First, I read `county-to-county-2016-2020-ins-outs-nets-gross.xlsx` and filtered the data to include only **Florida** for both O_CC and D_CC to analyze internal migration within Florida, and filtered out values with weights less than 60.
 
 ```python
 florida = state.iloc[:, [0, 1, 2, 3, 4, 5, 6, 7, 8]]
@@ -147,21 +139,30 @@ florida.columns = [
 ]
 ```
 
+> SC = State Code
+> CC = County Code
+> SN = State Name
+> CN = County Name
+> Weight = Direction to Origin
+
 ```python
 link = florida[(florida['O_SN'] == "Florida") &
                (florida['D_SN'] == "Florida") &
                (florida['Weight'] > 60)]
 ```
 
+![florida_link](/assets/images/florida_link.png)
+
 **-Node**
 
+I filtered the data using the file “R13859119_SL050.csv” when `node[‘Geo_STATE’] == 12`. Then, I selected several socioeconomic and demographic indicators variables using the code and added them to the node. 
 
-
-
-
-
-
-
+```python
+node = node[['Geo_FIPS','Geo_QName','Geo_STATE','Geo_COUNTY',
+             'SE_A00002_001', 'SE_A00002_002', 'SE_A14006_001',
+             'SE_A12001_005', 'SE_A12001_006', 'SE_A12001_007','SE_A12001_008',
+             'SE_A03001_002', 'SE_A03001_003', 'SE_A03001_005']]
+```
 
 <div style="overflow-x:auto;">
 <table border="1" class="dataframe">
@@ -401,3 +402,66 @@ link = florida[(florida['O_SN'] == "Florida") &
     </tr>
   </tbody>
 </table>
+
+
+**-Flordia Network**
+
+Next, I set the source to **`O_CC` (Origin County Code)**, the target to **`D_CC` (Destination County Code)**, and assigned weights to the edge attributes to create the Florida network.
+
+```python
+g = nx.from_pandas_edgelist(link,
+                            source = 'O_CC',
+                            target = 'D_CC',
+                            edge_attr='Weight',
+                            create_using=nx.DiGraph())
+
+degree_dict = dict(g.degree(weight = "Weight"))
+
+nx.set_node_attributes(g, degree_dict, 'degree')
+```
+
+```python
+node_unique = node.drop_duplicates(subset='Geo_COUNTY')
+
+node_attr = node_unique.set_index('Geo_COUNTY').to_dict('index')
+nx.set_node_attributes(g, node_attr)
+```
+
+## 💡 Algorithms
+
+**1. "Girvan-Newman"**
+
+```python
+communities = list(nx.community.girvan_newman(g))
+```
+Next, using the above code, I calculated the community partitioning of the Florida network 'g' graph I created and stored the results in a list.
+
+**- Calculate the Modularity**
+
+```python
+modularity_df = pd.DataFrame(
+    [
+        [k + 1, nx.community.modularity(g, communities[k])]
+        for k in range(len(communities))
+    ],
+    columns=["k", "modularity"],
+)
+```
+
+![modularity](/assets/images/g_n_modularity.png)
+
+![modularity_trend](/assets/images/g_n_modu_trend.png)
+
+The Girvan-Newman algorithm was used to calculate modularity according to the number of communities from k=1 to 66. The results showed that modularity was 0 or less in all intervals, indicating that no distinct community structure was observed. This shows that this algorithm may not be suitable for capturing the community structure of my current graph. 
+
+Accordingly, in addition to the community-based approach, I conducted degree centrality analysis to identify the importance of individual nodes within the network.
+
+![degree_centrality](/assets/images/degree_centrality.png)
+
+As a result, I found that many nodes located in the center had high centrality and played a key role in the network structure. This shows that even if clear community boundaries are lacking, there are major nodes that serve as connection hubs within the network. Therefore, I applied other multi-algorithms again.
+
+**2. "Louvain"**
+
+**3. "Lieden"**
+
+**3. "Informap"**
