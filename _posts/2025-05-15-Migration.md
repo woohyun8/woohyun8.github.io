@@ -628,7 +628,7 @@ Next, I merged the **Louvain algorithm map** created above with the **MSA bounda
 
 ## 👥 Examine Communities
 
-# Boxplot
+### Boxplot
 
 To compare the relationship between **population and income**, I created boxplots for each.
 
@@ -650,7 +650,7 @@ To compare the relationship between **population and income**, I created boxplot
 
 -> Community 2, which has the highest median income, includes counties with greater racial diversity, particularly higher proportions of Asian and Black/African American populations. In contrast, Community 1, with the lowest income, is predominantly White, but also shows the lowest overall diversity. These patterns show that racial demographics may partially reflect or interact with underlying socioeconomic structures within the network communities.
 
-# Violin Plot
+### Violin Plot
 
 I created violin plots too.
 
@@ -658,11 +658,11 @@ I created violin plots too.
 
 | Community | 💵 Income (Normalized) | 🎓 Bachelor | 🎓 Master | 🎓 Professional | 💡 Note |
 |-----------|------------------|-------------|------------|------------------|------------------------------|
-| **0**     | Upper-middle (50–75%)   | Medium–High (10~35%) | Medium (5~15%) | Moderate (0~6%)      | **High income** with *high bachelor’s degree rate*; also some master’s and professional degree presence |
-| **1**     | Moderate (50~70%)     | Moderate (10~30%)       | Low (~10%)   | Very Low (0~3%)  | **Low educational** , but income is *not low*; very few professionals |
-| **2**     | Highest (60~85%)| Highest (20~35%)  | Highest (~15%) | Highest (~7%) | **High-education**, **high-income community**; top across all indicators |
-| **3**     | Upper-moderate (60~75%) | Moderate (15~25%)       | Moderate (~10%)   | Low (~4%)       | **Balanced community** with above-average income and education |
-| **4**     | Moderate (55~70%)     | Low (10~20%)       | Low (~10%)   | Lowest (0~2%) | Low educational level relative to income; **less-educated** community |
+| **0**     | Upper-middle (50–75%)   | Medium–High (10~35%) | Medium (5~15%) | Moderate (0~6%)      | **High income**, **High education**|
+| **1**     | Moderate (50~70%)     | Moderate (10~30%)       | Low (~10%)   | Very Low (0~3%)  | **Moderate income**, **Low education**|
+| **2**     | Highest (60~85%)| Highest (20~35%)  | Highest (~15%) | Highest (~7%) | **High income**, **High education**|
+| **3**     | Upper-moderate (60~75%) | Moderate (15~25%)       | Moderate (~10%)   | Low (~4%)       | **Moderate income, education**|
+| **4**     | Moderate (55~70%)     | Low (10~20%)       | Low (~10%)   | Lowest (0~2%) | **Moderate income**, **Low education**|
 
 ![race](/assets/images/race_violin.png)
 
