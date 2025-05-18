@@ -423,9 +423,19 @@ node_attr = node_unique.set_index('Geo_COUNTY').to_dict('index')
 nx.set_node_attributes(g, node_attr)
 ```
 
+**County shp file**
+
+I filtered the data using the file “COUNTY_2019_US_SL050_Coast_Clipped.shp” when `map['STATEFP'] == 12`. Then, I stored the filtered data in a variable called “map.”
+
+```python
+merged = pd.merge(map, node, left_on='COUNTYFP', right_on='Geo_COUNTY')
+```
+
+Then, I merged the **map** and **node** dataframes to create a new dataframe called **merged**. This data will be used later to apply various algorithms to distinguish communities on the Florida map.
+
 ## 💡 Algorithms
 
-**1. "Girvan-Newman"**
+### "Girvan-Newman"
 
 ```python
 communities = list(nx.community.girvan_newman(g))
@@ -456,10 +466,53 @@ Accordingly, in addition to the community-based approach, I conducted degree cen
 
 As a result, I found that many nodes located in the center had high centrality and played a key role in the network structure. This shows that even if clear community boundaries are lacking, there are major nodes that serve as connection hubs within the network. Therefore, I applied other multi-algorithms again.
 
-**2. "Louvain"**
+### "Louvain"
+
+```python
+g = g.to_undirected()
+
+louv = community_louvain.best_partition(g, weight = 'Weight') # dictionary format
+node['louv'] = node['Geo_COUNTY'].map(louv) # save as a column in nodes dataframe
+```
+
+Next, I applied the Louvain algorithm. This algorithm is designed to work on undirected graphs, so when using directed graphs, it is usually necessary to explicitly convert them to undirected graphs. Therefore, I added the code `g = g.to_undirected()`.
+
+![louvain network](/assets/images/louvain_network.png)
+
+The graph above shows the results of dividing the network into four communities using the Louvain algorithm. The node colors represent different communities, and I can see that the connections between nodes within each community are more closely formed. The modularity value is 0.14, which is low but indicates that the community structure is slightly better than that obtained using the Girvan–Newman algorithm.
 
 
+### "Lieden"
 
-**3. "Lieden"**
+```python
+gg = ig.Graph.from_networkx(g)
+coms = la.find_partition(gg, la.ModularityVertexPartition, weights = 'Weight')
 
-**3. "Informap"**
+# save it in a dictionary
+for j in range(0, len(coms)):
+    if j == 0:
+        leid = {members : j for members in coms[j]}
+    else:
+        temp = {members : j for members in coms[j]}
+        leid = leid | temp
+
+# dictionary to dataframe
+node['leid'] = [leid.get(node) for node in node['Geo_COUNTY']]
+print(len(node['leid'].unique()))
+node.head()
+```
+
+Using the above code, I applied the Leiden algorithm to detect communities in the network, extracted the community numbers to which each node belongs, and stored them in a new column `leid` in the node data frame.
+
+### "Informap"
+
+```python
+im = Infomap(two_level=True, silent=True, flow_model='directed', num_trials=50)
+im.add_networkx_graph(g)
+im.run()
+info = im.get_modules(states=True) # dictionary format
+node['info'] = [info.get(node) for node in node['Geo_COUNTY']] # save as a column
+```
+
+The above code applies the Infomap algorithm to detect the community structure of a directed network (g) and stores the community number to which each node belongs in a new column named ‘info’ in the node data frame.
+
