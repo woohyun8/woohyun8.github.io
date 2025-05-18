@@ -769,11 +769,14 @@ I created violin plots too.
   </tbody>
 </table>
 
-### 
+### Choropleth Maps of Population and Income
 
+![maps](/assets/images/maps.png)
 
-
+-> The figure displays two side-by-side choropleth maps of Florida counties, illustrating the log-scaled distribution of total population and median household income. Furthermore, County-level Louvain community boundaries are overlaid to highlight how these socioeconomic indicators vary across algorithmically detected communities.
 
 ## 📊 Statistical Analysis
+
+
 
 ## Conclusion
