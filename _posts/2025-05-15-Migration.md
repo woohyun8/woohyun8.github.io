@@ -835,7 +835,7 @@ result.summary()
 from scipy.stats import mannwhitneyu, ks_2samp
 import itertools
 
-variables = ['income', 'pop', 'Bachelor', 'Master', 'Professional', 'White', 'Black_African', 'Asian']
+variables = ['pop', 'Bachelor', 'Master', 'Professional', 'White', 'Black_African', 'Asian']
 groups = sorted(node_data['louv'].dropna().unique())
 
 for var in variables:
@@ -849,5 +849,23 @@ for var in variables:
 
         print(f"{g1} vs {g2} | U p={u_p:.4f} | KS p={ks_p:.4f}")
 ```
+![statistic](/assets/images/all_statistic.png)
+
+The **Mann–Whitney U test** and **Kolmogorov–Smirnov (KS) test** indicate that a distribution difference is strongly significant when p < 0.05. However, if only one of the two tests is significant, it provides weak evidence that a distribution difference exists. In the figure above, I highlighted only the results seemed significant. Based on this, the following conclusions can be interpreted:
+
+**- Population**: Community 3 has a significantly smaller or larger population compared to communities 0, 1, and 4. In particular, the difference between community 1 and 3 (p < 0.001) is very strong.
+
+**- Bachelor's Degree**: The proportion of bachelor's degrees in Community 1 is statistically significantly different from other communities. While other communities have a high number or wide distribution, Community 1 not only has a narrow distribution but also shows low proportions across all three types of educational degrees (bachelor, master, professional). Therefore, Community 1 exhibits independent characteristics at the bachelor's degree level.
+
+**- Master's Degree**: Similar to the explanation for bachelor's degrees, there are statistically significant differences in the proportion of master's degrees between Community 1 and Communities 2, 3, and 4. Community 1 shows a general trend toward lower levels of higher education.
+
+**- Professional Degree**: Similar to the previous categories, the proportion of professional degree holders in Community 1 is distributed differently from other communities. Additionally, Communities 2 and 4 also show significant results, suggesting the possibility of regional disparities in professional education levels.
+
+**- White Population**: Based on the boxplot, I can see that Community 1 is at the center and shows a significant difference in the percentage of white population compared to other communities.
+
+**- Asian Population**: Based on the boxplot, I can see that the percentage of Asian population shows the most significant difference between Community 1 and 2, 3, and 4.
+
+- The results of the multivariate statistical analysis conducted in this study show that **Community 1 consistently exhibits statistically significant differences from other communities** in various variables, such as population characteristics, education level, and ethnic composition. In particular, significant differences were found in the percentages of bachelor's, master's, and professional degrees, as well as the percentages of white and Asian populations. This indicates that the socioeconomic characteristics or urban structure of Community 1 clearly distinguishes it from other regions.
+
 
 ## Conclusion
