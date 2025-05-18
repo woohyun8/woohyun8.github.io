@@ -660,11 +660,11 @@ I created violin plots too.
   <thead>
     <tr style="background-color: #f2f2f2;">
       <th style="padding: 8px; border: 1px solid #ddd;">Community</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">💰 Income (Normalized)</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">🎓 Bachelor</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">🎓 Master</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">🎓 Professional</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">💡 Note</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Income (Normalized)</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Bachelor</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Master</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Professional</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Note</th>
     </tr>
   </thead>
   <tbody>
@@ -713,6 +713,64 @@ I created violin plots too.
 
 
 ![race](/assets/images/race_violin.png)
+
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 15px;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Community</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Income (Normalized)</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Bachelor</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Master</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Professional</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>0</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate to High (45–75%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Medium–High (60–80%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (0–25%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Very Low (0–5%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>Mixed race, modest education</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>1</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (50–70%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">High (70–85%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (0–20%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Very Low (0–4%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>White dominant, low diversity</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>2</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">High (60–85%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate to High (60–80%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (10–25%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (0–4%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>High income, racially mixed</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>3</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate to High (60–75%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">High (~75–85%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (~10–20%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (~0–4%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>High White, low diversity</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>4</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (55–70%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">High (~75–85%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Very Low (~10%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Very Low (~0–3%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>White dominant, modest income</b></td>
+    </tr>
+  </tbody>
+</table>
+
+### 
+
 
 
 
