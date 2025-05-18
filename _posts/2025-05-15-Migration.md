@@ -572,6 +572,46 @@ The above code applies the Infomap algorithm to detect the community structure o
 
 ## 🔎 Metropolitan Statistical Areas
 
+Read the file “CBSA__MSA__2019_US_SL310_Coast_Clipped.shp” into a variable called msa, and filter only the Metro Areas in Florida using the code `msa[‘NAMELSAD’].str.contains(‘Metro’)` and `msa_florida[‘NAME’].str.contains(“FL”)`.
 
+```python
+fig, ax = plt.subplots(1, 1)
+fig.set_size_inches(10, 10)
 
+msa_florida.plot(ax=ax, facecolor='none', edgecolor='black')
+
+label_offsets = {
+    'Pensacola-Ferry Pass-Brent, FL': (0.6, 0.2),
+    'Crestview-Fort Walton Beach-Destin, FL': (0.6, 0.4),
+    'Naples-Marco Island, FL': (0.6, -0.5),
+    'Miami-Fort Lauderdale-Pompano Beach, FL': (0.6, -0.7),
+    'Tallahassee, FL': (0.4, 0.2),
+    'Panama City, FL': (0.3, 0.2),
+    'Cape Coral-Fort Myers, FL': (0.4, -0.3),
+}
+
+for idx, row in msa_florida.iterrows():
+    centroid = row['geometry'].centroid
+    offset = label_offsets.get(row['NAME'], (0.5, 0.2))  
+
+    ax.annotate(
+        row['NAME'],
+        xy=(centroid.x, centroid.y),
+        xytext=(centroid.x + offset[0], centroid.y + offset[1]),
+        fontsize=6.5,
+        arrowprops=dict(arrowstyle='-', lw=0.5),
+        bbox=dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor="gray", alpha=0.8)
+    )
+
+plt.title("Florida Metropolitan Statistical Areas", fontsize=14)
+plt.axis("off")
+plt.tight_layout()
+plt.show()
+```
+
+![fl_msa](/assets/images/fl_msa.png)
+
+Next, I merged the Louvain algorithm map created above with the MSA boundaries.
+
+![louv_msa](/assets/images/louv_msa.png)
 
