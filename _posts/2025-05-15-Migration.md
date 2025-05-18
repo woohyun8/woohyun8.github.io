@@ -628,11 +628,30 @@ Next, I merged the **Louvain algorithm map** created above with the **MSA bounda
 
 ## 👥 Examine Communities
 
-![louv_box](/assets/images/louv_boxplot.png)
+# Boxplot
 
+To compare the relationship between **population and income**, I created boxplots for each.
 
+![pop_income_box](/assets/images/pop_income_boxplot.png)
+
+-> **Community 2** exhibits the highest population concentration, with a wide interquartile range and extreme upper outliers, suggesting the presence of highly urbanized counties such as Miami-Dade. In contrast, Communities 1 and 0 generally include counties with smaller populations.
+
+-> Regarding income, **Community 2** also shows the highest median household income, while Community 1 has the lowest overall income levels and a wider spread. Communities 3 and 4 display relatively moderate income distributions.
+
+![edu_box](/assets/images/edu_boxplot.png)
+
+-> Community 2 consistently shows the highest median values for Bachelor’s, Master’s, and Professional degrees, suggesting a relatively more educated population. Communities 3 and 4 follow with moderate levels of higher education, while Community 1 exhibits the lowest educational attainment across all three categories, including a notably low median for Professional degrees. These gaps indicate that the network-based communities identified by the Louvain algorithm also reflect underlying differences in educational composition across Florida counties.
+
+-> Notably, Community 2, which exhibited the highest median income in the earlier boxplot, also shows the highest levels of educational achievement across all degree types (Bachelor, Master, and Professional). In contrast, Community 1, which had the lowest income, likewise demonstrates the lowest overall education levels. This association indicates a clear relationship between **income level and educational standard** across the detected communities.
 
 ![race_box](/assets/images/race_boxplot.png)
+
+-> **Community 1 and Community 4** show the highest median proportions of *White* residents, whereas Community 2 has the most racially diverse distribution, with lower White representation and higher proportions of both Black/African American and Asian populations. Community 3 demonstrates a relatively elevated Asian population, while Communities 0 and 4 have lower overall diversity, particularly in terms of Black/African American representation.
+
+-> Community 2, which has the highest median income, includes counties with greater racial diversity, particularly higher proportions of Asian and Black/African American populations. In contrast, Community 1, with the lowest income, is predominantly White, but also shows the lowest overall diversity. These patterns show that racial demographics may partially reflect or interact with underlying socioeconomic structures within the network communities.
+
+# Violin Plot
+
 
 
 ## 📊 Statistical Analysis
