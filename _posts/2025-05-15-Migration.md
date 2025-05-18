@@ -652,6 +652,20 @@ To compare the relationship between **population and income**, I created boxplot
 
 # Violin Plot
 
+I created violin plots too.
+
+![edu](/assets/images/edu_violin.png)
+
+| Community | 💵 Income (Normalized) | 🎓 Bachelor | 🎓 Master | 🎓 Professional | 💡 Note |
+|-----------|------------------|-------------|------------|------------------|------------------------------|
+| **0**     | Upper-middle (50–75%)   | Medium–High (10~35%) | Medium (5~15%) | Moderate (0~6%)      | **High income** with *high bachelor’s degree rate*; also some master’s and professional degree presence |
+| **1**     | Moderate (50~70%)     | Moderate (10~30%)       | Low (~10%)   | Very Low (0~3%)  | **Low educational** , but income is *not low*; very few professionals |
+| **2**     | Highest (60~85%)| Highest (20~35%)  | Highest (~15%) | Highest (~7%) | **High-education**, **high-income community**; top across all indicators |
+| **3**     | Upper-moderate (60~75%) | Moderate (15~25%)       | Moderate (~10%)   | Low (~4%)       | **Balanced community** with above-average income and education |
+| **4**     | Moderate (55~70%)     | Low (10~20%)       | Low (~10%)   | Lowest (0~2%) | Low educational level relative to income; **less-educated** community |
+
+![race](/assets/images/race_violin.png)
+
 
 
 ## 📊 Statistical Analysis
