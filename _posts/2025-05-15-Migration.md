@@ -139,11 +139,7 @@ florida.columns = [
 ]
 ```
 
-> SC = State Code
-> CC = County Code
-> SN = State Name
-> CN = County Name
-> Weight = Direction to Origin
+> SC = State Code / CC = County Code / SN = State Name / CN = County Name / Weight = Direction to Origin
 
 ```python
 link = florida[(florida['O_SN'] == "Florida") &
