@@ -398,7 +398,7 @@ node = node[['Geo_FIPS','Geo_QName','Geo_STATE','Geo_COUNTY',
     </tr>
   </tbody>
 </table>
-
+</div> 
 
 **-Flordia Network**
 
@@ -457,6 +457,8 @@ Accordingly, in addition to the community-based approach, I conducted degree cen
 As a result, I found that many nodes located in the center had high centrality and played a key role in the network structure. This shows that even if clear community boundaries are lacking, there are major nodes that serve as connection hubs within the network. Therefore, I applied other multi-algorithms again.
 
 **2. "Louvain"**
+
+
 
 **3. "Lieden"**
 
