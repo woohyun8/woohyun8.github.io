@@ -656,13 +656,61 @@ I created violin plots too.
 
 ![edu](/assets/images/edu_violin.png)
 
-| Community | 💵 Income (Normalized) | 🎓 Bachelor | 🎓 Master | 🎓 Professional | 💡 Note |
-|-----------|------------------|-------------|------------|------------------|------------------------------|
-| **0**     | Upper-middle (50–75%)   | Medium–High (10~35%) | Medium (5~15%) | Moderate (0~6%)      | **High income**, **High education**|
-| **1**     | Moderate (50~70%)     | Moderate (10~30%)       | Low (~10%)   | Very Low (0~3%)  | **Moderate income**, **Low education**|
-| **2**     | Highest (60~85%)| Highest (20~35%)  | Highest (~15%) | Highest (~7%) | **High income**, **High education**|
-| **3**     | Upper-moderate (60~75%) | Moderate (15~25%)       | Moderate (~10%)   | Low (~4%)       | **Moderate income, education**|
-| **4**     | Moderate (55~70%)     | Low (10~20%)       | Low (~10%)   | Lowest (0~2%) | **Moderate income**, **Low education**|
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 15px;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Community</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">💰 Income (Normalized)</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">🎓 Bachelor</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">🎓 Master</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">🎓 Professional</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">💡 Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>0</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Upper–middle (50~75%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Medium–High (10~35%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Medium (5~15%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (0~6%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>High income, High education</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>1</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (50~70%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (10~30%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (~10%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Very Low (0~3%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>Moderate income, Low education</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>2</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Highest (60~85%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Highest (20~35%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Highest (~15%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Highest (~7%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>High income, High education</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>3</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Upper–moderate (60~75%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (15~25%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (~10%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (~4%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>Moderate income, education</b></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>4</b></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Moderate (55~70%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (10~20%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Low (~10%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Lowest (0~2%)</td>
+      <td style="padding: 8px; border: 1px solid #ddd;"><b>Moderate income, Low education</b></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ![race](/assets/images/race_violin.png)
 
