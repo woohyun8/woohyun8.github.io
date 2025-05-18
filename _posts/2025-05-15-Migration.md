@@ -652,7 +652,7 @@ To compare the relationship between **population and income**, I created boxplot
 
 ### Violin Plot
 
-I created violin plots too.
+To further explore the distributions, I visualized the variables using violin plots.
 
 ![edu](/assets/images/edu_violin.png)
 
