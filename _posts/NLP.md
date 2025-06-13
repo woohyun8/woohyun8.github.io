@@ -1,0 +1,37 @@
+---
+title: "Internal Migration–Florida Analysis"
+layout: post
+date: 2025-05-15
+image: /assets/images/markdown.jpg
+headerImage: false
+tag:
+- County-to-County
+- Internal Migration
+- Community Detection
+- Florida
+star: true
+mathjax: true
+category: blog
+categories: R
+author: rachel
+description: Markdown summary with different options
+---
+
+<script type="text/javascript"
+  id="MathJax-script" 
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+-   [Introduction](#introduction)
+-   [Journal Summary](#journal-summary)
+    -   [🧐 Research Question & Research Gap](#research-question--research-gap)
+    -   [🗝️ Method](#method)
+    -   [📑 Result/Interpretation](#resultinterpretation)
+-   [LDA](#lda)
+-   [BERTopic](#bertopic)
+-   [LLM](#llm)
+
+# Introduction
+
+This project was carried out as part of CSI 500 at George Mason University Korea, under the guidance of Professor Sohyun Park. I found the concept of handling text data numerically and extracting meaningful information from it to be both interesting and practical. In particular, in this project, I learned about **Topic Modeling** techniques for finding hidden themes in text based on **movie/TV review data** from Amazon, and gained insight into how such data can be utilized in real-world applications. In this post, I will summarize the topic modeling process I conducted and describe the analytical approach I took.
